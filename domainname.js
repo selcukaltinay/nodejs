@@ -1,7 +1,8 @@
 var http = require('http');
-
 http.createServer(function (req, res) {
   res.writeHead(200, {'Content-Type': 'text/html'});
-  var text = "<h1>deneme</h1> <p> first server application</p>"
-  res.end(text);
+  res.write(req.url);
+  res.end();
 }).listen(8080);
+
+// req.url returns tha path localhost:8080/deneme returns deneme
